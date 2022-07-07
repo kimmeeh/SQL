@@ -1,0 +1,36 @@
+-- Create a music studio merch database.
+
+CREATE TABLE sundial_sound (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, quantity INTEGER, in_stock REAL, category TEXT);
+
+INSERT INTO sundial_sound VALUES (1, "volume one", 25, 500, 500, "vinyl");
+INSERT INTO sundial_sound VALUES (2, "volume one", 5, 50, 50, "stickers");
+INSERT INTO sundial_sound VALUES (3, "volume one", 15, 100, 100, "t-shirt");
+INSERT INTO sundial_sound VALUES (4, "volume one", 10, 100, 100, "cd");
+INSERT INTO sundial_sound VALUES (5, "volume one", 7, 100, 100, "tape");
+INSERT INTO sundial_sound VALUES (6, "volume one", 20, 50, 50, "poster");
+INSERT INTO sundial_sound VALUES (7, "sds", 5, 50, 50, "stickers");
+INSERT INTO sundial_sound VALUES (8, "sds", 15, 100, 100, "t-shirt");
+INSERT INTO sundial_sound VALUES (9, "sds", 20, 50, 50, "poster");
+INSERT INTO sundial_sound VALUES (10, "sds", 2, 1000, 1000, "pin");
+INSERT INTO sundial_sound VALUES (11, "1 day session", 500, 1, 1, "studio time");
+INSERT INTO sundial_sound VALUES (12, "2 day session", 1000, 1, 1, "studio time");
+INSERT INTO sundial_sound VALUES (13, "3 day session", 1250, 1, 1, "studio time");
+INSERT INTO sundial_sound VALUES (14, "4 day session", 1500, 1, 1, "studio time");
+INSERT INTO sundial_sound VALUES (15, "5 day session", 2000, 1, 1, "studio time");
+
+-- Display the database ordered by price.
+SELECT * from sundial_sound 
+ORDER BY price DESC;
+
+-- What is the average price of the studio merch?
+SELECT AVG(price) "avg studio time"
+FROM sundial_sound
+WHERE category = 'studio time';
+
+-- What's in stock?
+SELECT category, in_stock
+FROM sundial_sound
+GROUP BY category;
+
+
+

@@ -392,7 +392,26 @@ ELSE "noob" END "experience"
 FROM astronauts
 ORDER BY space_walks_hr desc;
 
+-- Who has the most flight hours?
+SELECT gender, AVG(space_flight_hr)
+FROM astronauts
+GROUP BY gender;
 
+-- Who has the most space walk hours?
+SELECT gender, AVG(space_walks_hr)
+FROM astronauts
+GROUP BY gender;
+
+-- Women in STEM
+SELECT *
+FROM astronauts
+WHERE year > 2000
+AND gender = "Female";
+
+SELECT *
+FROM astronauts
+WHERE year < 2000
+AND gender = "Female";
 
 
 --
